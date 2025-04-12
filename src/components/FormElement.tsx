@@ -15,7 +15,7 @@ function FormElement({ setTodos }: FormElementProps) {
     const title = formData.get("title")?.toString().trim() || "";
     const description = formData.get("description")?.toString().trim() || "";
     const completed = formData.get("completed") === "on";
-    const type = formData.get("type")?.toString() || "";
+    const type = formData.get("type") as "easy" | "normal" | "hard";
 
     if (!title || !description) return alert("Please fill all fields");
 
